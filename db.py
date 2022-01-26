@@ -1,7 +1,7 @@
 from psycopg2 import extras
 import psycopg2
 
-#connect to your db
+# connect to your db
 connection = psycopg2.connect(
     host="localhost",
     database="mohitdb",
@@ -10,8 +10,8 @@ connection = psycopg2.connect(
     port=5555
 )
 
-#create a cursor. the params allow for rows to be returned as a dict
-cursor = connection.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
+# create a cursor. the params allow for rows to be returned as a dict
+cursor = connection.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
 cursor.execute("select id, name from employees")
 
@@ -24,8 +24,8 @@ for row in rows:
     print(row['id'])
     print(row['name'])
 
-#close the cursor
+# close the cursor
 cursor.close()
 
-#close the connection
+# close the connection
 connection.close()
