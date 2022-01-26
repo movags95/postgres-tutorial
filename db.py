@@ -1,5 +1,6 @@
 from psycopg2 import extras
 import psycopg2
+
 #connect to your db
 connection = psycopg2.connect(
     host="localhost",
